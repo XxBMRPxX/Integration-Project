@@ -1,6 +1,7 @@
 # Auto Loan Calculator
 # __author__ == Michael Hierrezuelo
 
+
 def main():
     # Definitions
     def name_confirmation():
@@ -25,7 +26,6 @@ def main():
             print("Please Use 'Y' Or 'N'")
             name_confirmation()
 
-
     def birthday_confirmation():
         """
         Confirm Inputted Birthday
@@ -48,7 +48,6 @@ def main():
         else:
             print("Please Use 'Y' Or 'N'")
             birthday_confirmation()
-
 
     def loan_data_confirmation():
         """
@@ -78,10 +77,9 @@ def main():
             print("Please Use 'Y' Or 'N'")
             loan_data_confirmation()
 
-
     def reset_calculator():
         """
-        Reset The Calculator Program
+        Reset Auto Loan Calculator Program?
         :return: Yes/No
         """
         yes = ["Yes", "Y", "yes", "y"]
@@ -95,7 +93,6 @@ def main():
         else:
             print("Please Use 'Y' Or 'N'")
             reset_calculator()
-
 
     # Introduction
     print("Welcome To Michael's Auto Loan Calculator!")
@@ -141,16 +138,18 @@ def main():
 
     print("Calculating...")
 
-    afterDownPayment = loanAmount - downPayment
     taxRateDecimal = float(taxPercentage / 100)
-    annualTotalAfterTax = afterDownPayment * (1.0 + taxRateDecimal)
-    monthlyTotalAfterTax = annualTotalAfterTax / 12
-
     annualInterestRateDecimal = float(loanAPR / 100)
+
+    afterDownPayment = loanAmount - downPayment
+    annualTotalAfterTax = afterDownPayment * (1.0 + taxRateDecimal)
+
     annualTotalWithAPR = annualTotalAfterTax * (1.0 + annualInterestRateDecimal)
     monthlyTotalWithAPR = annualTotalWithAPR / 12
     print("Done!")
-    print("Your Monthly Payment: ", monthlyTotalWithAPR)
+    print(fullName + "'s Monthly Payment")
+    print("Date of Birth:", fullBirthday)
+    print(f"Your Monthly Payment: ${monthlyTotalWithAPR:.2f}", sep="")
 
     # Restart Calculator?
     reset_calculator()
@@ -184,8 +183,7 @@ main()
 # Boolean: "and" is a "conditional" word used to make sure it goes for both "this" condition and "that" condition
 # Boolean: "not" is also a conditional word used to make sure it is "not" meeting that specific condition(s)
 # "While" is a Loop word that continues over and over usually for unknown amount of responses in the input
-#for, in, range
+# for, in, range
 #
-#for i in range(1,101,2):
+# for i in range(1,101,2):
 #    print(x)
-
